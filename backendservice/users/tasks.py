@@ -136,10 +136,3 @@ def process_analysis_session(session_id):
     if getattr(session, "tracking_mode", "yolo26") == "classical":
         return process_analysis_session_classical(session_id)
     return process_analysis_session_33(session_id)
-
-# @shared_task
-# def process_analysis_session(session_id):
-#     session = AnalysisSession.objects.get(id=session_id, user__isnull=False)
-#     if getattr(session, "tracking_mode", "yolo26") == "classical":
-#         return process_analysis_session_classical(str(session_id))
-#     return process_analysis_session_33(str(session_id))
